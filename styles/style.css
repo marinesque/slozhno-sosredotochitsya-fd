@@ -2,4 +2,109 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--background-color);
+  background-image: url(../images/cover-image-dark.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  border-inline-start: 1px solid var(--main-color);
+  border-block-end: 1px solid var(--main-color);
+  inset-block-end: 10px;
+  inset-inline-start: 10px;
+}
+
+.decorated-zone::after {
+  border-block-start: 1px solid var(--main-color);
+  border-inline-end: 1px solid var(--main-color);
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+}
+
+.header__rec {
+  position: absolute;
+  top: 10px;
+  right: 19px;
+  text-transform: uppercase;
+  color: var(--main-color);
+  font-size: inherit;
+  line-height: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+.header__rec::after {
+  content: "";
+  display: inline-block;
+  align-self: center;
+  width: 9px;
+  height: 9px;
+  background-color: var(--main-color);
+  box-shadow: 0px 0px 4px 2px var(--main-color);
+  border-radius: 50%;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  justify-content: space-between;
+  padding: 10px;
+  min-block-size: 668px;
+  block-size: 100vh;
+}
+
+.header__theme-menu {
+  align-self: start;
+  justify-self: end;
+  padding-block: 30px;
+  padding-inline-end: 20px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  justify-content: center;
+  background-color: transparent;
+  text-transform: lowercase;
+  border: 1px transparent solid;
+  color: var(--main-color);
+  padding: 4px 13px;
+  display: flex;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border: 1px var(--main-color) solid;
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px var(--main-color) solid;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px var(--main-color) solid;
 }
