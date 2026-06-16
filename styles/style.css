@@ -24,21 +24,21 @@
 .decorated-zone::before {
   border-inline-start: 1px solid var(--main-color);
   border-block-end: 1px solid var(--main-color);
-  inset-block-end: 10px;
-  inset-inline-start: 10px;
+  inset-block-end: var(--corner-gap);
+  inset-inline-start: var(--corner-gap);
 }
 
 .decorated-zone::after {
   border-block-start: 1px solid var(--main-color);
   border-inline-end: 1px solid var(--main-color);
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
+  inset-block-start: var(--corner-gap);
+  inset-inline-end: var(--corner-gap);
 }
 
 .header__rec {
   position: absolute;
-  top: 10px;
-  right: 19px;
+  top: var(--corner-gap);
+  right: calc(var(--corner-gap) + 10px);
   text-transform: uppercase;
   color: var(--main-color);
   font-size: inherit;
@@ -79,7 +79,7 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
 }
 
 .header__theme-menu-item {
@@ -114,7 +114,9 @@
 }
 
 .header__title {
+  grid-row: 2 / 3;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  align-self: end;
   font-weight: 700;
   color: #db00ff;
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -131,8 +133,9 @@
 }
 
 .header__subtitle {
-  align-items: end;
-  justify-content: center;
+  grid-row: 3 / 4;
+  align-items: center;
+  justify-content: end;
   font-weight: 700;
   line-height: 1.3;
   color: var(--background-color);
@@ -141,4 +144,50 @@
   justify-self: end;
   align-self: center;
   inline-size: 355px;
+}
+
+@media (min-width: 768px) {
+
+  .header {
+    padding: 20px;
+  }
+
+  .header__title {
+    margin-left: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__subtitle {
+    inline-size: 364px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .header {
+    padding: 20px;
+  }
+  
+  .header__theme-menu {
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: start;
+    inline-size: auto;
+    block-size: auto;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__title {
+    grid-row: 2 / 3;
+    align-self: center;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+    .header__subtitle {
+    inline-size: 491px;
+    align-self: center;
+  }
 }
