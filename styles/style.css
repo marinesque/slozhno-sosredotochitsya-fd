@@ -10,6 +10,8 @@
   background-repeat: no-repeat;
   font-family: var(--font-family);
   font-size: var(--font-size);
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -113,9 +115,9 @@
   border-bottom: 1px var(--main-color) solid;
 }
 
-.header__title {
+.header__title{
   grid-row: 2 / 3;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--mobile-font-size);
   align-self: end;
   font-weight: 700;
   color: #db00ff;
@@ -151,16 +153,23 @@
   background-color: var(--background-color);
   color: var(--main-color);
   text-align: left;
+  margin: 0;
 }
 
 .main__section {
   line-height: 23.4px;
   font-size: inherit;
-  margin-top: 40px;
+  margin-top: 29px;
   align-items: start;
+  padding-bottom: 1px;
 }
 
-.section_too_hard .section_concentration{
+.section_concentration{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.section_too_hard{
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -176,7 +185,7 @@
   font-size: inherit;
   background-color: var(--main-color);
   color: var(--background-color);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .main__section-text {
@@ -188,11 +197,56 @@
   font-weight: var(--regular-font-weight);
 }
 
+.base_title {
+  margin-bottom: 20px;
+}
+
+.main__images-collection {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: var(--corner-gap);
+}
+
+.main__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  block-size: 100vh;
+  min-height: 668px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  padding-top: 25px;
+}
+
+.footer__title {
+  font-size: var(--mobile-font-size);
+  font-weight: 700;
+  color: #db00ff;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 0.82;
+  margin: 0;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
+
+  .main__section {
+    margin-top: 39px;
+    padding-bottom: 22px;
+  }
 
   .header__title {
     margin-left: -20px;
-    font-size: var(--title-font-size);
+    font-size: var(--desktop-font-size);
   }
 
   .header__subtitle {
@@ -201,10 +255,90 @@
 
   .section_too_hard {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas:
-    'main__section-title main__section-list';
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+  }
+
+  .section_too_hard .main__section-title {
+    grid-column: 1 / 2;
+    margin-bottom: 0;
+  }
+
+  .section_too_hard .main__section-list {
+    grid-column: 2 / 4;
+  }
+
+  .section_concentration {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+
+  .section_concentration .main__section-title {ы
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-bottom: 0;
+  }
+
+  .section_concentration .main__section-list {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+
+  .section_golden_fish {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .section_golden_fish .main__section-title {
+    grid-column: 1 / 2;
+    margin-bottom: 0;
+  }
+
+  .section_golden_fish .base_title {
+    grid-column: 2 / 4;
+  }
+
+  .section_golden_fish .main__section-list {
+    grid-column: 2 / 4;
+  }
+
+  .main__images-collection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-auto-flow: dense;
+  }
+
+  .main__image {
+    inline-size: 100%;
+    block-size: 100%;
+    max-block-size: 100%;
+    object-fit: cover;
+  }
+
+  .main__image:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  .main__image:nth-child(2) {
+    grid-column: 3;
+    grid-row: span 2;
+  }
+
+  .main__image:nth-child(3) {
+    grid-column: 1;
+    grid-row: 2 / 4;
+  }
+
+  .main__image:nth-child(5) {
+    grid-column: 2 / 4;
+  }
+
+  .footer__title {
+    font-size: var(--desktop-font-size);
   }
 }
 
@@ -228,7 +362,7 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-    .header__subtitle {
+  .header__subtitle {
     inline-size: 491px;
     align-self: center;
   }
@@ -251,14 +385,6 @@
     grid-row: 2 / 3;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-  }
-
-  .section_golden_fish {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas:
-    'main__section-title main__section-list';
     gap: 20px;
   }
 

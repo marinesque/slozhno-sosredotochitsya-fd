@@ -5,6 +5,8 @@
 :root {
   --font-size: 18px;
   --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  --mobile-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --desktop-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --font-family: "IBM Plex Mono", "Arial", sans-serif;
   --regular-font-weight: 400;
   --bold-font-weight: 700;
