@@ -46,13 +46,13 @@
   font-size: inherit;
   line-height: 25px;
   display: flex;
-  gap: 10px;
+  align-items: center;
 }
 
 .header__rec::after {
   content: "";
   display: inline-block;
-  align-self: center;
+  margin-left: 10px;
   width: 9px;
   height: 9px;
   background-color: var(--main-color);

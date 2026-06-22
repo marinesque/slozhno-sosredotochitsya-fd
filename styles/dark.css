@@ -20,6 +20,10 @@
   --article-color: #F1B2CE;
 }
 
+:root.theme-dark  .header__rec {
+  display: flex;;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-color: #ff0070;
@@ -31,5 +35,9 @@
     --rectangle-title-color: #000028;
     --not-rectangle-title-color: #FF0070;
     --article-color: #F1B2CE;
+  }
+
+  .header__rec {
+    display: flex;
   }
 }

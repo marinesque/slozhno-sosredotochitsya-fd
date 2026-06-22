@@ -19,3 +19,7 @@
   --not-rectangle-title-color: #353430;
   --article-color: #353430;
 }
+
+:root.theme-light .header__rec {
+  display: none;
+}
