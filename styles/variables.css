@@ -17,6 +17,8 @@
   --accent-color: #ff0070;
   --article-color: #F1B2CE;
   --title-color: #DB00FF;
+  --decor-color: #FF0070;
+  --hover-border-color: rgb(255 0 112 / 0.4);
   --corner-gap: clamp(10px, 2.6vw, 20px);
   --content-padding: 10px;
 }

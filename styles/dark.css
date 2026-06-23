@@ -1,5 +1,5 @@
 :root.theme-dark {
-  --accent-color: #ff0070;
+  --accent-color: #FF0070;
   --title-color: #DB00FF;
   --background-image: url(../images/cover-image-dark.png);
   --background-color: #000028;
@@ -8,6 +8,8 @@
   --rectangle-title-color: #000028;
   --not-rectangle-title-color: #FF0070;
   --article-color: #F1B2CE;
+  --decor-color: #FF0070;
+  --hover-decor-color: #FF007066;
 }
 
 :root.theme-dark  .header__rec {
@@ -16,7 +18,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent-color: #ff0070;
+    --accent-color: #FF0070;
     --title-color: #DB00FF;
     --background-image: url(../images/cover-image-dark.png);
     --background-color: #000028;
@@ -25,6 +27,8 @@
     --rectangle-title-color: #000028;
     --not-rectangle-title-color: #FF0070;
     --article-color: #F1B2CE;
+    --decor-color: #FF0070;
+    --hover-decor-color: #FF007066;
   }
 
   .header__rec {
