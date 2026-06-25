@@ -10,6 +10,7 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --accent-color: #FF8DCB;
+  --shadow-color: #FF0070;
   --title-color: #FFC2E6;
   --background-image: url(../images/cover-image-light.png);
   --background-color: #FFF1F7;
@@ -29,6 +30,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     --accent-color: #FF8DCB;
+    --shadow-color: #FF0070;
     --title-color: #FFC2E6;
     --background-image: url(../images/cover-image-light.png);
     --background-color: #FFF1F7;
